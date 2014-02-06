@@ -11,17 +11,19 @@ int main(){
 	int height;							/* The height of the spaceship. */
 	int speed;							/* The speed of the spaceship. */
 	int burn;							/* The fuel which gets burned this step */
+	int tensec;							/* The time the flight is running for. (in ten second steps) */
+	int fuel;							/* The fuel you have left. (kilogram) */
 	char title[]="Lunar Lander - Version 0.0.1";
 	char license[]="Licensed under the GPLv2.";
 	char start[]="Press any key to start.";
 	char intro0[]="This is a computer simulation of an Apollo lunar landing capsule.";
 	char intro1[]="The on-board computer has failed so you have to land the capsule manually.";
 	char intro2[]="Set burn rate of retro rockets to any value between 0 (free fall) and 200";
-	char intro3[]="(maximum burn) kilo per second. Set burn rate every 10 seconds."; /*that's wy we have to go with 10 second-steps.*/
+	char intro3[]="(maximum burn) kg per second. Set burn rate every 10 seconds."; /*that's wy we have to go with 10 second-steps.*/
 	char intro4[]="Good Luck!";
-	char dead[]="There were no survivors.";
-	char crashed[]="The Spaceship crashed. Good luck getting back home.";
-	char success[]="You made it! Good job!";
+	char dead[]="\nThere were no survivors.";
+	char crashed[]="\nThe Spaceship crashed. Good luck getting back home.";
+	char success[]="\nYou made it! Good job!";
 	int row,col;							/* store the number of rows and */
 							                /* the number of colums of the screen, */
 	initscr();					                /* start the curses mode, */
@@ -42,11 +44,20 @@ int main(){
 	endwin();							/* End Curses Mode.*/
 
 	
-	/* Set initial height and speed. */
+	/* Set initial height, time, fuel and speed. */
 	speed=0;
 	height=0;
+	fuel=0;
+	tensec=0;
 	
 	do {
+		printf("\n%d0 Seconds passed.", tensec);
+		if(fuel=0)  {
+			printf("\nNo fuel left.");
+		}
+		else{
+			printf("\nYou have %d kg of fuel left.", fuel);
+		}
 		printf("\nHeight: %d", height);
 		printf("\nBurn: ");
 		scanf("%i", &burn);
@@ -55,8 +66,9 @@ int main(){
 			printf("The burn rate rate must be between 0 and 200.\n");
 			continue;
 		}
-
+		fuel = fuel-burn;
 		speed = calculate(height, speed, burn, gravity);
+		tensec++;
 	
 	}while(height>0);
 	

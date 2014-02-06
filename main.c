@@ -7,7 +7,7 @@ int calculate(int height, int speed, int burn, int gravity) {
 }
 
 int main(){	
-	const int gravity = 15;						/* The rate in which the spaceship descents in free fall */
+	const int gravity = 100;						/* The rate in which the spaceship descents in free fall (in ten seconds) */
 	int height;							/* The height of the spaceship. */
 	int speed;							/* The speed of the spaceship. */
 	int burn;							/* The fuel which gets burned this step */
@@ -45,9 +45,9 @@ int main(){
 
 	
 	/* Set initial height, time, fuel and speed. */
-	speed=0;
-	height=0;
-	fuel=0;
+	speed=1000;
+	height=12000;
+	fuel=12000;
 	tensec=0;
 	
 	do {

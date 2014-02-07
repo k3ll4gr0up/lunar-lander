@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
 	int tensec;			/* The time the flight is running for. (in ten second steps) */
 	int fuel;			/* The fuel you have left. (kilogram) */
 	int prevheight;			/* The previous height to compare with actual. (coloured digits) */
-	int step;			j/* Counts the steps passed since last output of the collumn names */
+	int step;			/* Counts the steps passed since last output of the collumn names */
 
 
 	char dead[]="\nThere were no survivors.\n\n";

@@ -19,3 +19,12 @@ Lunar Lander was the first-ever PC game written in 1967 by a student. It was ori
 
 So we took a look at the BASIC sources which we got [here](http://www.vintage-basic.net/bcg/lunar.bas) and began writing. Now the final version of our program is finished and we are just about to begin working on a GUI version of this.
 
+## Difficulty
+
+You can change the difficulty of the game using the command-line argument "d". 
+The usage is: 
+```
+lunar-lander -d [1/2/3]
+```
+Where 1 is the easiest and 3 the hardest. If you don't specify a difficulty, the easiest will be used.
+

@@ -70,36 +70,54 @@ int main(int argc, char *argv[]){
 		step=1;
 	}
 	else {
-	if(strcmp(argv[1], "-d")==0){
-		if(strcmp(argv[2], "1")==0){	/* Easy */
-			speed=1000;
-			height=randomheight();
-			fuel=12000;
-			tensec=0;
-			burn=0;
-			prevheight=height;
-			step=1;
-		}
-		if(strcmp(argv[2], "2")==0){	/* Medium */
-			speed=1000;
-			height=randomheight();
-			fuel=1000;
-			tensec=0;
-			burn=0;
-			prevheight=height;
-			step=1;
-		}
-		if(strcmp(argv[2], "3")==0){	/* Hard */
-			speed=2000;
-			height=randomheight() - 2000;
-			fuel=900;
-			tensec=0;
-			burn=0;
-			prevheight=height;
-			step=1;
-		}
-	}
-}
+		if(strcmp(argv[1], "-d")==0){
+			if(strcmp(argv[2], "1")==0){	/* Easy */
+				speed=1000;
+				height=randomheight();
+				fuel=12000;
+				tensec=0;
+				burn=0;
+				prevheight=height;
+				step=1;
+			}
+			if(strcmp(argv[2], "2")==0){	/* Medium */
+				speed=1000;
+				height=randomheight();
+				fuel=1000;
+				tensec=0;
+				burn=0;
+				prevheight=height;
+				step=1;
+			}
+			if(strcmp(argv[2], "3")==0){	/* Hard */
+				speed=2000;
+				height=randomheight() - 2000;
+				fuel=900;
+				tensec=0;
+				burn=0;
+				prevheight=height;
+				step=1;
+			}
+			else {					/* Default, Easy */
+				speed=1000;
+				height=randomheight();
+				fuel=12000;
+				tensec=0;
+				burn=0;
+				prevheight=height;
+				step=1;
+			}
+		}	
+			else {					/* Default, Easy */
+				speed=1000;
+				height=randomheight();
+				fuel=12000;
+				tensec=0;
+				burn=0;
+				prevheight=height;
+				step=1;
+			}
+	}	
 	
 	
 	printf("\nTime\t");

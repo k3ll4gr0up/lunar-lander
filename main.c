@@ -113,7 +113,7 @@ int main(int argc, char *argv[]){
 		else if(strcmp(argv[1], "--info")==0){
 			printf("\nLunar Lander - Version %s\n", version);
 			printf("\nThis is a school project made by Nicolai Sueper and Lukas Fuelling.");
-			printf("\n\nContact us at http://k40s.net")
+			printf("\n\nContact us at http://k40s.net");
 		}
 		else {					/* If the first Argument is something else, default to Easy */
 			speed=1000;

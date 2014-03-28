@@ -3,8 +3,25 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define AE (unsigned char)142		/* Definition for Ä */
+#define ae (unsigned char)132		/* Definition for ä */
+#define OE (unsigned char)153		/* Definition for Ö */
+#define oe (unsigned char)148		/* Definition for ö */
+#define UE (unsigned char)154		/* Definition for Ü */
+#define ue (unsigned char)129		/* Definition for ü */
+
 int calculate(int height, int speed, int burn, int gravity) {
 	return (speed+gravity-burn);
+}
+
+int help() {
+	printf("Lunar Lander version 1.1\n");
+	printf("Made by Lukas F%clling and Nicolai S%cper\n\n", ue, ue);
+	printf("The following arguments are possible (only one):\n");
+	printf("-d [1/2/3]\tDefine difficulty. 1 is easy 3 is hard.\n");
+	printf("--info\tShow different intro.");
+	printf("--help\tPrint this help and exit.\n");
+	return 0;
 }
 
 int windowcleaner(int step) {
@@ -38,13 +55,13 @@ int randomheight() {
 int main(int argc, char *argv[]){
 	
 	const int gravity = 100;	/* The rate in which the spaceship descents in free fall (in ten seconds) */
-	int height;			/* The height of the spaceship. */
-	int speed;			/* The speed of the spaceship. */
-	int burn;			/* The fuel which gets burned this step */
-	int tensec;			/* The time the flight is running for. (in ten second steps) */
-	int fuel;			/* The fuel you have left. (kilogram) */
-	int prevheight;			/* The previous height to compare with actual. (coloured digits) */
-	int step;			/* Counts the steps passed since last output of the collumn names */
+	int height;					/* The height of the spaceship. */
+	int speed;					/* The speed of the spaceship. */
+	int burn;					/* The fuel which gets burned this step */
+	int tensec;					/* The time the flight is running for. (in ten second steps) */
+	int fuel;					/* The fuel you have left. (kilogram) */
+	int prevheight;				/* The previous height to compare with actual. (coloured digits) */
+	int step;					/* Counts the steps passed since last output of the collumn names */
 	
 	
 	char version[]="1.1";		/* The Version of the program */
@@ -63,7 +80,7 @@ int main(int argc, char *argv[]){
 		/* Set initial height, time, fuel, burn, prevheight, step and speed according to difficulty. */
 		
 	if(argc==1){					/* If there is only one argument (which is the program's name) */
-		speed=1000;				/* Default to easy (and randomize the height) */
+		speed=1000;					/* Default to easy (and randomize the height) */
 		height=randomheight();
 		fuel=12000;
 		tensec=0;
@@ -71,7 +88,7 @@ int main(int argc, char *argv[]){
 		prevheight=height;
 		step=1;
 	}
-	else {						/* If there are more arguments (or less) */
+	else {									/* If there are more arguments (or less) */
 		if(strcmp(argv[1], "-d")==0){		/* If the "first" Argument is -d, check for the second argument*/
 			if(strcmp(argv[2], "1")==0){	/* Easy */
 				speed=1000;
@@ -112,8 +129,12 @@ int main(int argc, char *argv[]){
 		}	
 		else if(strcmp(argv[1], "--info")==0){
 			printf("\nLunar Lander - Version %s\n", version);
-			printf("\nThis is a school project made by Nicolai Sueper and Lukas Fuelling.");
+			printf("Made by Lukas F%clling and Nicolai S%cper\n\n", ue, ue);
 			printf("\n\nContact us at http://k40s.net\n");
+		}
+		else if(strcmp(argv[1], "--help")==0){
+			help();
+			return 0;
 		}
 		else {					/* If the first Argument is something else, default to Easy */
 			speed=1000;

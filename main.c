@@ -1,3 +1,27 @@
+/*
+ * main.c
+ * 
+ * Copyright 2014 Lukas Fülling <lukas@k40s.net>
+ * Copyright 2014 Nicolai Süper 
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ * 
+ * 
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -74,7 +98,7 @@ int main(int argc, char *argv[]){
 	printf("This is a computer simulation of an Apollo lunar landing capsule.\n");
 	printf("The on-board computer has failed so you have to land the capsule manually.\n");
 	printf("Set burn rate of retro rockets to any value between 0 (free fall) and 200\n");
-	printf("(maximum burn) kilo per second. Set burn rate every 10 seconds.\n"); /*that's wy we have to go with 10 second-steps.*/
+	printf("(maximum burn) kilo per second. Set burn rate every 10 seconds.\n"); /* That's why we have to go with 10 second-steps. */
 	printf("Good Luck!\n");
 	
 		/* Set initial height, time, fuel, burn, prevheight, step and speed according to difficulty. */

@@ -84,7 +84,7 @@ int main(int argc, char *argv[]){
 	int burn;					/* The fuel which gets burned this step */
 	int tensec;					/* The time the flight is running for. (in ten second steps) */
 	int fuel;					/* The fuel you have left. (kilogram) */
-	int prevheight;				/* The previous height to compare with actual. (coloured digits) */
+	int prevheight;				/* The previous height to compare with actual. (for the colored digits) */
 	int step;					/* Counts the steps passed since last output of the collumn names */
 	
 	
@@ -228,10 +228,10 @@ int main(int argc, char *argv[]){
 		if(speed>10){
 			printf("%s", dead);
 		}
-		else if(speed<10){
+		else if(speed<10 && speed>3){
 			printf("%s", crashed);
 		}
-		else if(speed>0 || speed<3){
+		else if(speed<3){
 			printf("%s", success);
 		}
 	}

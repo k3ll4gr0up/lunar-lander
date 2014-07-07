@@ -1,4 +1,4 @@
-# ![lunar](http://k40s.net/download/lunar32.png) Lunar Lander [![Build Status](https://travis-ci.org/k3ll4gr0up/lunar-lander.png?branch=master)](https://travis-ci.org/k3ll4gr0up/lunar-lander)
+# ![lunar](http://k40s.net/download/lunar32.png) Lunar Lander [![Build Status](https://travis-ci.org/k3ll4gr0up/lunar-lander.png?branch=master)](https://travis-ci.org/lfuelling/lunar-lander)
 
 
 This is a port in C of the original "Lunar Lander" video game, which is written in BASIC. [Tell me more.](http://k40s.net/post/lunar-lander/)

@@ -1,4 +1,0 @@
-# This is the config file for our Travis CI (https://travis-ci.org)
-language: c
-compiler: gcc
-script: make

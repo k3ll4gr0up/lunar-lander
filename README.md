@@ -1,12 +1,12 @@
-# Lunar Lander [![Build Status](http://ci.k40s.net/job/lunar-lander/badge/icon)](http://ci.k40s.net/job/lunar-lander/)
+# Lunar Lander
 
-This is a port in C of the original "Lunar Lander" video game, which is written in BASIC. [Tell me more.](http://k40s.net/post/lunar-lander/)
+This is a port in C of the original "Lunar Lander" video game, which is written in BASIC.
 
 ## Building
 
 This application depends on:
 
-- Linux because Windows(r)(tm) is crap.
+- Linux/BSD because Windows(r)(tm) is crap.
 - Build tools. Mainly gcc, make and some other stuff. 
 - A VT1000 compatible terminal emulator for the color output.
 

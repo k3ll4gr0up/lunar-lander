@@ -155,6 +155,13 @@ int main(int argc, char *argv[]){
 			printf("\nLunar Lander - Version %s\n", version);
 			printf("Made by Lukas F%clling and Nicolai S%cper\n\n", ue, ue);
 			printf("\n\nContact us at http://k40s.net\n");
+			speed=1000;					/* Default to easy (and randomize the height) */
+			height=randomheight();
+			fuel=12000;
+			tensec=0;
+			burn=0;
+			prevheight=height;
+			step=1;
 		}
 		else if(strcmp(argv[1], "--help")==0){
 			help();
